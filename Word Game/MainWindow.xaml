@@ -50,8 +50,9 @@
         <TextBlock x:Name="word7" Background="DarkOrange" Grid.Row="3" Grid.Column="9" Grid.ColumnSpan="4" Text="* * * * *" TextAlignment="Center" />
         <TextBlock x:Name="word8" Background="DarkOrange" Grid.Row="4" Grid.Column="9" Grid.ColumnSpan="4" Text="* * * * * *" TextAlignment="Center" />
 
-        <Button x:Name="Submit" Background="#4bf442" Grid.Row="10" Grid.Column="15" 
+        <Button x:Name="Submit" Background="#4bf442" Grid.Row="10" Grid.Column="8" 
                 Content="SUBMIT" Grid.ColumnSpan="2" Click="Submit_Click"/>
+        <Button x:Name="Clear" Background="yellow" Grid.Row="10" Grid.Column="14" Content="CLEAR" Grid.ColumnSpan="3" Margin="42.2,0.4,42,0" Click="Clear_Click"/>
         <TextBox x:Name="wordInput" Background="BlueViolet" Grid.Column="3" Grid.Row="6" Grid.ColumnSpan="11"  />
         <Label x:Name="labelScore" Background="#edeac0" Grid.Column="16" Grid.Row="0" Content="Score: " />
         <TextBlock x:Name="scoreNum" Background="#edeac0" Grid.Column="17" Grid.Row="0" Text="" />
