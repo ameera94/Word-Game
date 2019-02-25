@@ -29,7 +29,7 @@ namespace Word_Game
             GmChk();
         }
 
-        public int score = 70;
+        public int score = 0;
         
 
         public static string[] WordsArr = new string[8];
@@ -95,27 +95,10 @@ namespace Word_Game
         
         public void GmChk()
         {
-            //if (score == n * 80)
-            //{
-            //    level++;
-            //    n++;
-            //    MessageBox.Show("Level Complete!");
-            //    GmPlay();
-            //    word1.Text = "* * * *";
-            //    word2.Text = "* * * *";
-            //    word3.Text = "* * * *";
-            //    word4.Text = "* * * *";
-            //    word5.Text = "* * * *";
-            //    word6.Text = "* * * *";
-            //    word7.Text = "* * * * *";
-            //    word8.Text = "* * * * * *";
-            //}
-
-
+          
             switch (level)
             {
                 case 2:
-                    MessageBox.Show("Level 2");
                     for (int i = 0; i < WordsArr.Length; i++)
                     {
                         WordsArr[i] = WordsArr2[i];
@@ -129,7 +112,6 @@ namespace Word_Game
                     GmPlay();
                     break;
                 case 3:
-                    MessageBox.Show("Level 3");
                     for (int i = 0; i < WordsArr.Length; i++)
                     {
                         WordsArr[i] = WordsArr3[i];
@@ -143,7 +125,6 @@ namespace Word_Game
                     GmPlay();
                     break;
                 case 4:
-                    MessageBox.Show("Level 4");
                     for (int i = 0; i < WordsArr.Length; i++)
                     {
                         WordsArr[i] = WordsArr4[i];
@@ -157,7 +138,6 @@ namespace Word_Game
                     GmPlay();
                     break;
                 case 5:
-                    MessageBox.Show("Level 5");
                     for (int i = 0; i < WordsArr.Length; i++)
                     {
                         WordsArr[i] = WordsArr5[i];
@@ -171,7 +151,6 @@ namespace Word_Game
                     GmPlay();
                     break;
                 case 6:
-                    MessageBox.Show("Level 6");
                     for (int i = 0; i < WordsArr.Length; i++)
                     {
                         WordsArr[i] = WordsArr6[i];
@@ -185,7 +164,6 @@ namespace Word_Game
                     GmPlay();
                     break;
                 case 7:
-                    MessageBox.Show("Level 7");
                     for (int i = 0; i < WordsArr.Length; i++)
                     {
                         WordsArr[i] = WordsArr7[i];
@@ -199,7 +177,6 @@ namespace Word_Game
                     GmPlay();
                     break;
                 case 8:
-                    MessageBox.Show("Level 8");
                     for (int i = 0; i < WordsArr.Length; i++)
                     {
                         WordsArr[i] = WordsArr8[i];
@@ -213,7 +190,6 @@ namespace Word_Game
                     GmPlay();
                     break;
                 case 9:
-                    MessageBox.Show("Level 9");
                     for (int i = 0; i < WordsArr.Length; i++)
                     {
                         WordsArr[i] = WordsArr9[i];
@@ -246,32 +222,53 @@ namespace Word_Game
                     }                    
                     break;
                 case 1:
-                    word2.Text = WordsArr[1];
-                    score += 10; 
+                    if (word2.Text == "* * * *")
+                    {
+                        word2.Text = WordsArr[1];
+                        score += 10;
+                    }
                     break;
                 case 2:
-                    word3.Text = WordsArr[2];
-                    score += 10;
+                    if (word3.Text == "* * * *")
+                    {
+                        word3.Text = WordsArr[2];
+                        score += 10;
+                    }
                     break;
                 case 3:
-                    word4.Text = WordsArr[3];
-                    score += 10;
+                    if (word4.Text == "* * * *")
+                    {
+                        word4.Text = WordsArr[3];
+                        score += 10;
+                    }
                     break;
                 case 4:
-                    word5.Text = WordsArr[4];
-                    score += 10;
+                    if (word5.Text == "* * * *")
+                    {
+                        word5.Text = WordsArr[4];
+                        score += 10;
+                    }
                     break;
                 case 5:
-                    word6.Text = WordsArr[5];
-                    score += 10;
+                    if (word6.Text == "* * * *")
+                    {
+                        word6.Text = WordsArr[5];
+                        score += 10;
+                    }
                     break;
                 case 6:
-                    word7.Text = WordsArr[6];
-                    score += 10;
+                    if (word7.Text == "* * * * *")
+                    {
+                        word7.Text = WordsArr[6];
+                        score += 15;
+                    }
                     break;
                 case 7:
-                    word8.Text = WordsArr[7];
-                    score += 10;
+                    if (word8.Text == "* * * * * *")
+                    {
+                        word8.Text = WordsArr[7];
+                        score += 25;
+                    }
                     break;
                 case (-1):
                     wordInput.Text = "Wrong! Try again!";
@@ -280,12 +277,13 @@ namespace Word_Game
                     break;
             }
 
-            if (score == n * 80)
+            if (score == n * 100)
             {
                 level++;
                 n++;
-                MessageBox.Show("Level Complete!");
+                GmChk();
                 GmPlay();
+                MessageBox.Show($"Level Complete! Click OK to begin level {level}.");
                 word1.Text = "* * * *";
                 word2.Text = "* * * *";
                 word3.Text = "* * * *";
@@ -294,11 +292,17 @@ namespace Word_Game
                 word6.Text = "* * * *";
                 word7.Text = "* * * * *";
                 word8.Text = "* * * * * *";
+                
+            }
+            if (level == 10)
+            {
+                MessageBox.Show("CONGRATULATIONS! YOU HAVE COMPLETED ALL LEVELS!");
             }
 
             wordInput.Text = "";
 
             scoreNum.Text = score.ToString();
+            levelNum.Text = level.ToString();
         }
 
         private void Letter_Click(object sender, RoutedEventArgs e)
@@ -319,6 +323,7 @@ namespace Word_Game
                 elem.IsEnabled = true;
             }
             GmChk();
+            GmPlay();
         }
 
         private void Clear_Click(object sender, RoutedEventArgs e)
