@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Word_Game"
         mc:Ignorable="d"
-        Title="MainWindow" Height="auto" Width="auto" Background="BlanchedAlmond">
+        Title="MainWindow" Height="auto" Width="auto" Background="DimGray">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\tech-w84a\source\repos\Word-Game\Word Game\img\abstract-background-blur-255377.jpg"/>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
@@ -41,31 +44,35 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <TextBlock x:Name="word1" Background="DarkOrange" Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="4" Text="* * * *" TextAlignment="Center" />
-        <TextBlock x:Name="word2" Background="DarkOrange" Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="4" Text="* * * *" TextAlignment="Center" />
-        <TextBlock x:Name="word3" Background="DarkOrange" Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="4" Text="* * * *" TextAlignment="Center" />
-        <TextBlock x:Name="word4" Background="DarkOrange" Grid.Row="4" Grid.Column="4" Grid.ColumnSpan="4" Text="* * * *" TextAlignment="Center" />
-        <TextBlock x:Name="word5" Background="DarkOrange" Grid.Row="1" Grid.Column="9" Grid.ColumnSpan="4" Text="* * * *" TextAlignment="Center" />
-        <TextBlock x:Name="word6" Background="DarkOrange" Grid.Row="2" Grid.Column="9" Grid.ColumnSpan="4" Text="* * * *" TextAlignment="Center" />
-        <TextBlock x:Name="word7" Background="DarkOrange" Grid.Row="3" Grid.Column="9" Grid.ColumnSpan="4" Text="* * * * *" TextAlignment="Center" />
-        <TextBlock x:Name="word8" Background="DarkOrange" Grid.Row="4" Grid.Column="9" Grid.ColumnSpan="4" Text="* * * * * *" TextAlignment="Center" />
+        <TextBlock x:Name="word1" Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="4" Text="* * * *" TextAlignment="Center" FontSize="40" FontWeight="UltraBold" FontFamily="Arial" />
+        <TextBlock x:Name="word2" Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="4" Text="* * * *" TextAlignment="Center" FontSize="40" FontWeight="UltraBold" FontFamily="Arial" />
+        <TextBlock x:Name="word3" Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="4" Text="* * * *" TextAlignment="Center" FontSize="40" FontWeight="UltraBold" FontFamily="Arial" />
+        <TextBlock x:Name="word4" Grid.Row="4" Grid.Column="4" Grid.ColumnSpan="4" Text="* * * *" TextAlignment="Center" FontSize="40" FontWeight="UltraBold" FontFamily="Arial" />
+        <TextBlock x:Name="word5" Grid.Row="1" Grid.Column="9" Grid.ColumnSpan="4" Text="* * * *" TextAlignment="Center" FontSize="40" FontWeight="UltraBold" FontFamily="Arial" />
+        <TextBlock x:Name="word6" Grid.Row="2" Grid.Column="9" Grid.ColumnSpan="4" Text="* * * *" TextAlignment="Center" FontSize="40" FontWeight="UltraBold" FontFamily="Arial" />
+        <TextBlock x:Name="word7" Grid.Row="3" Grid.Column="9" Grid.ColumnSpan="4" Text="* * * * *" TextAlignment="Center" FontSize="40" FontWeight="UltraBold" FontFamily="Arial" />
+        <TextBlock x:Name="word8" Grid.Row="4" Grid.Column="9" Grid.ColumnSpan="4" Text="* * * * * *" TextAlignment="Center" FontSize="40" FontWeight="UltraBold" FontFamily="Arial" />
 
-        <Button x:Name="Submit" Background="#4bf442" Grid.Row="10" Grid.Column="15" 
-                Content="SUBMIT" Grid.ColumnSpan="2" Click="Submit_Click"/>
-        <TextBox x:Name="wordInput" Background="BlueViolet" Grid.Column="3" Grid.Row="6" Grid.ColumnSpan="11"  />
-        <Label x:Name="labelScore" Background="#edeac0" Grid.Column="16" Grid.Row="0" Content="Score: " />
-        <TextBlock x:Name="scoreNum" Background="#edeac0" Grid.Column="17" Grid.Row="0" Text="" />
-        <Button x:Name="letter1" Background="blue" Grid.Row="8" Grid.Column="3" 
-                Content="" Click="Letter_Click" />
-        <Button x:Name="letter2" Background="blue" Grid.Row="8" Grid.Column="5" 
-                Content="" Click="Letter_Click"  />
-        <Button x:Name="letter3" Background="blue" Grid.Row="8" Grid.Column="7" 
-                Content=""  Click="Letter_Click"/>
-        <Button x:Name="letter4" Background="blue" Grid.Row="8" Grid.Column="9" 
-                Content="" Click="Letter_Click" />
-        <Button x:Name="letter5" Background="blue" Grid.Row="8" Grid.Column="11" 
-                Content="" Click="Letter_Click" />
-        <Button x:Name="letter6" Background="blue" Grid.Row="8" Grid.Column="13" 
-                Content="" Click="Letter_Click" />
+        <Button x:Name="Submit" Background="#4bf442" Grid.Row="10" Grid.Column="8" 
+                Content="SUBMIT" Grid.ColumnSpan="2" Click="Submit_Click" FontSize="15" FontWeight="UltraBold" FontFamily="Arial" />
+        <Button x:Name="Clear" Background="yellow" Grid.Row="10" Grid.Column="14" Content="CLEAR" Grid.ColumnSpan="3" Click="Clear_Click" FontSize="15" FontWeight="UltraBold" FontFamily="Arial" />
+        <TextBox x:Name="wordInput" Background="BlanchedAlmond" Grid.Column="3" Grid.Row="6" Grid.ColumnSpan="11" TextAlignment="Center" FontSize="30" FontWeight="Bold" FontFamily="Arial"  />
+        <Label x:Name="labelScore" Background="BlanchedAlmond" Grid.Column="16" Grid.Row="0" Content="Score: " FontSize="15" FontWeight="Bold" FontFamily="Arial" />
+        <TextBlock x:Name="scoreNum" Background="BlanchedAlmond" Grid.Column="17" Grid.Row="0" Text="" TextAlignment="Center" FontSize="15" FontWeight="Bold" FontFamily="Arial" />
+        <Label x:Name="levels" Background="BlanchedAlmond" Grid.Column="0" Grid.Row="0" Content="Level: " FontSize="15" FontWeight="Bold" FontFamily="Arial" />
+        <TextBlock x:Name="levelNum" Background="BlanchedAlmond" Grid.Column="1" Grid.Row="0" Text="" TextAlignment="Center" FontSize="15" FontWeight="Bold" FontFamily="Arial" />
+        
+        <Button x:Name="letter1" Background="PaleGreen" Grid.Row="8" Grid.Column="3" 
+                Content="" Click="Letter_Click" FontSize="25" FontWeight="UltraBold" FontFamily="Arial" />
+        <Button x:Name="letter2" Background="PaleGreen" Grid.Row="8" Grid.Column="5" 
+                Content="" Click="Letter_Click" FontSize="25" FontWeight="UltraBold" FontFamily="Arial" />
+        <Button x:Name="letter3" Background="Palegreen" Grid.Row="8" Grid.Column="7" 
+                Content=""  Click="Letter_Click" FontSize="25" FontWeight="UltraBold" FontFamily="Arial" />
+        <Button x:Name="letter4" Background="PaleGreen" Grid.Row="8" Grid.Column="9" 
+                Content="" Click="Letter_Click" FontSize="25" FontWeight="UltraBold" FontFamily="Arial" />
+        <Button x:Name="letter5" Background="PaleGreen" Grid.Row="8" Grid.Column="11" 
+                Content="" Click="Letter_Click" FontSize="25" FontWeight="UltraBold" FontFamily="Arial" />
+        <Button x:Name="letter6" Background="PaleGreen" Grid.Row="8" Grid.Column="13" 
+                Content="" Click="Letter_Click" FontSize="25" FontWeight="UltraBold" FontFamily="Arial" />
     </Grid>
 </Window>
